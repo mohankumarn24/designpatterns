@@ -1,88 +1,89 @@
 package net.projectsync.designpatterns.c.behavioral;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.CommandLineRunner;
 import java.util.Stack;
 
-// ---------------- Originator ----------------
-class Form {
-    private String name;
-    private String email;
-
-    public void setName(String name) { this.name = name; }
-    public void setEmail(String email) { this.email = email; }
-
-    public FormMemento save() {
-        return new FormMemento(name, email);
-    }
-
-    public void restore(FormMemento memento) {
-        if (memento != null) {
-            this.name = memento.getName();
-            this.email = memento.getEmail();
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "Name: " + name + ", Email: " + email;
-    }
-}
-
-// ---------------- Memento ----------------
 class FormMemento {
-    private final String name;
-    private final String email;
+	private final String name;
+	private final String email;
 
-    public FormMemento(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
+	public FormMemento(String name, String email) {
+		this.name = name;
+		this.email = email;
+	}
 
-    public String getName() { return name; }
-    public String getEmail() { return email; }
+	public String getName() {
+		return name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
 }
 
-// ---------------- Caretaker ----------------
 class FormHistory {
-    private final Stack<FormMemento> history = new Stack<>();
+	private final Stack<FormMemento> history = new Stack<>();
 
-    public void save(FormMemento memento) { history.push(memento); }
-    public FormMemento undo() { return history.isEmpty() ? null : history.pop(); }
+	public void save(FormMemento memento) {
+		history.push(memento);
+	}
+
+	public FormMemento undo() {
+		return history.isEmpty() ? null : history.pop();
+	}
 }
 
-@SpringBootApplication
-public class OriginatorPattern implements CommandLineRunner {
+class Form {
+	private String name;
+	private String email;
 
-    public static void main(String[] args) {
-        SpringApplication.run(OriginatorPattern.class, args);
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    @Override
-    public void run(String... args) {
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-        Form form = new Form();
-        FormHistory history = new FormHistory();
+	public FormMemento save() {
+		return new FormMemento(name, email);
+	}
 
-        // Initial state
-        form.setName("Mohan");
-        form.setEmail("mohan@example.com");
-        history.save(form.save()); // save snapshot
+	public void restore(FormMemento memento) {
+		if (memento != null) {
+			this.name = memento.getName();
+			this.email = memento.getEmail();
+		}
+	}
 
-        // Update 1
-        form.setName("Mohan Kumar");
-        form.setEmail("mohan.kumar@example.com");
-        history.save(form.save()); // save snapshot
+	@Override
+	public String toString() {
+		return "Name: " + name + ", Email: " + email;
+	}
+}
 
-        System.out.println("Current Form: " + form);
+public class OriginatorPattern {
+	public static void main(String[] args) {
+		Form form = new Form();
+		FormHistory history = new FormHistory();
 
-        // Undo last change
-        form.restore(history.undo());
-        System.out.println("After First Undo: " + form);
+		// Initial state
+		form.setName("Mohan");
+		form.setEmail("mohan@example.com");
+		history.save(form.save()); // save snapshot
 
-        // Another undo
-        form.restore(history.undo());
-        System.out.println("After Second Undo: " + form);
-    }
+		// Update 1
+		form.setName("Mohan Kumar");
+		form.setEmail("mohan.kumar@example.com");
+		history.save(form.save()); // save snapshot
+
+		System.out.println("Current Form: " + form);
+
+		// Undo last change
+		form.restore(history.undo());
+		System.out.println("After First Undo: " + form);
+
+		// Another undo
+		form.restore(history.undo());
+		System.out.println("After Second Undo: " + form);
+	}
 }

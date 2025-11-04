@@ -1,71 +1,60 @@
-package net.projectsync.standalone;
+package net.projectsync.designpatterns.c.behavioral;
 
-// ------------------- Strategy Interface -------------------
 interface PaymentStrategy {
-    void pay(int amount);
+	void pay(int amount);
 }
 
-// ------------------- Concrete Strategy 1: Credit Card -------------------
 class CreditCardPayment implements PaymentStrategy {
+	private String cardNumber;
 
-    private String cardNumber;
+	public CreditCardPayment(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
 
-    public CreditCardPayment(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    @Override
-    public void pay(int amount) {
-        System.out.println("Paid " + amount + " using Credit Card: " + cardNumber);
-    }
+	@Override
+	public void pay(int amount) {
+		System.out.println("Paid " + amount + " using Credit Card: " + cardNumber);
+	}
 }
 
-// ------------------- Concrete Strategy 2: PayPal -------------------
-class PayPalPayment implements PaymentStrategy {
+class ChequePayment implements PaymentStrategy {
+	private String chequeNumber;
 
-    private String email;
+	public ChequePayment(String chequeNumber) {
+		this.chequeNumber = chequeNumber;
+	}
 
-    public PayPalPayment(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public void pay(int amount) {
-        System.out.println("Paid " + amount + " using PayPal: " + email);
-    }
+	@Override
+	public void pay(int amount) {
+		System.out.println("Paid " + amount + " using Cheque: " + chequeNumber);
+	}
 }
 
-// ------------------- Context / Shopping Cart -------------------
 class ShoppingCart {
+	private PaymentStrategy paymentStrategy;
 
-    private PaymentStrategy paymentStrategy;
+	public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
+		this.paymentStrategy = paymentStrategy;
+	}
 
-    // Set the strategy at runtime
-    public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
-        this.paymentStrategy = paymentStrategy;
-    }
-
-    public void checkout(int amount) {
-        if (paymentStrategy == null) {
-            throw new IllegalStateException("PaymentStrategy not set!");
-        }
-        paymentStrategy.pay(amount);
-    }
+	public void checkout(int amount) {
+		if (paymentStrategy == null) {
+			throw new IllegalStateException("PaymentStrategy not set!");
+		}
+		paymentStrategy.pay(amount);
+	}
 }
 
-// ------------------- Main Class -------------------
 public class StrategyPattern {
+	public static void main(String[] args) {
+		ShoppingCart cart = new ShoppingCart();
 
-    public static void main(String[] args) {
+		// Pay using Credit Card
+		cart.setPaymentStrategy(new CreditCardPayment("1234-5678-9876-5432"));
+		cart.checkout(200);
 
-        ShoppingCart cart = new ShoppingCart();
-
-        // Pay using Credit Card
-        cart.setPaymentStrategy(new CreditCardPayment("1234-5678-9876-5432"));
-        cart.checkout(500);
-
-        // Switch to PayPal dynamically
-        cart.setPaymentStrategy(new PayPalPayment("user@example.com"));
-        cart.checkout(300);
-    }
+		// Switch to Cheque dynamically
+		cart.setPaymentStrategy(new ChequePayment("12345"));
+		cart.checkout(500);
+	}
 }

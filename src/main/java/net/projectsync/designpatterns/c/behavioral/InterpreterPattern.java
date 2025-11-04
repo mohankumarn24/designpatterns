@@ -1,49 +1,47 @@
 package net.projectsync.designpatterns.c.behavioral;
 
 // 1. Context class
-class Context {
-    private int age;
+class Person {
+	private int age;
 
-    public Context(int age) {
-        this.age = age;
-    }
-
-    public int getAge() {
-        return age;
-    }
+	public Person(int age) { this.age = age; }
+	
+	// Setters, Getters
+	public void setAge(int age) { this.age = age; }
+	public int getAge() { return age; }
 }
 
 // 2. AbstractExpression
 interface Expression {
-    boolean interpret(Context context);
+	boolean interpret(Person person);
 }
 
 // 3. TerminalExpression: Adult
 class AdultExpression implements Expression {
-    @Override
-    public boolean interpret(Context context) {
-        return context.getAge() >= 18;
-    }
+	@Override
+	public boolean interpret(Person person) {
+		return person.getAge() >= 18;
+	}
 }
 
 // 4. TerminalExpression: Minor
 class MinorExpression implements Expression {
-    @Override
-    public boolean interpret(Context context) {
-        return context.getAge() < 18;
-    }
+	@Override
+	public boolean interpret(Person person) {
+		return person.getAge() < 18;
+	}
 }
 
 // 5. Client code
 public class InterpreterPattern {
-    public static void main(String[] args) {
-        Context john = new Context(20);
-        Context alice = new Context(15);
+	public static void main(String[] args) {
+		Person john = new Person(20);
+		Person alice = new Person(15);
 
-        Expression adult = new AdultExpression();
-        Expression minor = new MinorExpression();
+		Expression adultExpression = new AdultExpression();
+		Expression minorExpression = new MinorExpression();
 
-        System.out.println("John is adult? " + adult.interpret(john));   // true
-        System.out.println("Alice is minor? " + minor.interpret(alice)); // true
-    }
+		System.out.println("John is adult? "  + adultExpression.interpret(john)); 		// true
+		System.out.println("Alice is minor? " + minorExpression.interpret(alice)); 		// true
+	}
 }
