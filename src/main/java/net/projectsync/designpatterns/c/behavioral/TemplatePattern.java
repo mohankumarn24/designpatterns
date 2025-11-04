@@ -15,12 +15,12 @@ abstract class Game {
 
 class Cricket extends Game {
 	@Override
-	public void startPlay() {
+	protected void startPlay() {
 		System.out.println("Cricket Game Started");
 	}
 
 	@Override
-	public void endPlay() {
+	protected void endPlay() {
 		System.out.println("Cricket Game Finished!");
 	}
 }
@@ -28,12 +28,12 @@ class Cricket extends Game {
 @Component
 class Football extends Game {
 	@Override
-	public void startPlay() {
+	protected void startPlay() {
 		System.out.println("Football Game Started");
 	}
 
 	@Override
-	public void endPlay() {
+	protected void endPlay() {
 		System.out.println("Football Game Finished!");
 	}
 }
