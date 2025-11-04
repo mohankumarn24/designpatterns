@@ -6,7 +6,7 @@ import java.util.List;
 // Mediator Interface
 interface ChatMediator {
 	void addUser(User user);
-	void sendMessage(String message, User user);
+	void sendMessageToAll(String message, User user);
 }
 
 // Concrete Mediator
@@ -19,7 +19,7 @@ class ChatRoom implements ChatMediator {
 	}
 
 	@Override
-	public void sendMessage(String message, User sender) {
+	public void sendMessageToAll(String message, User sender) {
 		for (User user : users) {
 			// Message should not be received by the sender
 			if (user != sender) {
@@ -52,7 +52,7 @@ class ChatUser extends User {
 	@Override
 	public void send(String message) {
 		System.out.println(this.name + " sends: " + message);
-		mediator.sendMessage(message, this);
+		mediator.sendMessageToAll(message, this);
 	}
 
 	@Override
@@ -61,7 +61,6 @@ class ChatUser extends User {
 	}
 }
 
-// Main to test
 public class MediatorPattern {
 	public static void main(String[] args) {
 		ChatRoom chatRoom = new ChatRoom();

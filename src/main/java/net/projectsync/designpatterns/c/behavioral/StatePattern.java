@@ -35,7 +35,7 @@ class Order {
 	private OrderState orderState;
 
 	public Order() {
-		this.orderState = new PendingState(); // Initial state
+		this.orderState = new PendingState(); 			// Initial state
 	}
 
 	public void setState(OrderState orderState) {
@@ -52,8 +52,8 @@ public class StatePattern {
 	public static void main(String[] args) {
 		Order order = new Order();
 
-		order.processOrder(); 				// Pending -> Processed
-		order.processOrder(); 				// Processed -> Shipped
-		order.processOrder(); 				// Shipped -> Completed
+		order.processOrder(); 							// Pending -> Processed
+		order.processOrder(); 							// Processed -> Shipped
+		order.processOrder(); 							// Shipped -> Completed
 	}
 }

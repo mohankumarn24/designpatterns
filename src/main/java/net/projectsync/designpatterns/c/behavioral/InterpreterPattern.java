@@ -1,6 +1,5 @@
 package net.projectsync.designpatterns.c.behavioral;
 
-// 1. Context class
 class Person {
 	private int age;
 
@@ -11,12 +10,10 @@ class Person {
 	public int getAge() { return age; }
 }
 
-// 2. AbstractExpression
 interface Expression {
 	boolean interpret(Person person);
 }
 
-// 3. TerminalExpression: Adult
 class AdultExpression implements Expression {
 	@Override
 	public boolean interpret(Person person) {
@@ -24,7 +21,6 @@ class AdultExpression implements Expression {
 	}
 }
 
-// 4. TerminalExpression: Minor
 class MinorExpression implements Expression {
 	@Override
 	public boolean interpret(Person person) {
@@ -32,7 +28,6 @@ class MinorExpression implements Expression {
 	}
 }
 
-// 5. Client code
 public class InterpreterPattern {
 	public static void main(String[] args) {
 		Person john = new Person(20);
@@ -45,3 +40,34 @@ public class InterpreterPattern {
 		System.out.println("Alice is minor? " + minorExpression.interpret(alice)); 		// true
 	}
 }
+
+/*
+package net.projectsync.designpatterns.c.behavioral;
+
+class Person {
+	private int age;
+
+	public Person(int age) { this.age = age; }
+	public void setAge(int age) { this.age = age; }
+	public int getAge() { return age; }
+}
+
+@FunctionalInterface
+interface Expression {
+	boolean interpret(Person person);
+}
+
+public class InterpreterPattern {
+	public static void main(String[] args) {
+
+		Expression adultExpression = p -> p.getAge() >= 18;
+		Expression minorExpression = p -> p.getAge() < 18;
+
+		Person john = new Person(20);
+		Person alice = new Person(15);
+
+		System.out.println("John is adult? "  + adultExpression.interpret(john));
+		System.out.println("Alice is minor? " + minorExpression.interpret(alice));
+	}
+}
+*/

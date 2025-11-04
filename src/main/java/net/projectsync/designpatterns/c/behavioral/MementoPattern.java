@@ -61,7 +61,7 @@ class Form {
 	}
 }
 
-public class OriginatorPattern {
+public class MementoPattern {
 	public static void main(String[] args) {
 		Form form = new Form();
 		FormHistory history = new FormHistory();

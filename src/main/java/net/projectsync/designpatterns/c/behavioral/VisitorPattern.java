@@ -1,8 +1,5 @@
 package net.projectsync.designpatterns.c.behavioral;
 
-import java.util.Arrays;
-import java.util.List;
-
 // Visitor = Actions
 interface Visitor {
 	void visit(Lion lion);
@@ -51,8 +48,10 @@ class Monkey implements Animal {
 
 public class VisitorPattern {
 	public static void main(String[] args) {
-		List<Animal> animals = Arrays.asList(new Lion(), new Elephant(), new Monkey());
+		Lion lion = new Lion();
 		HealthCheck healthCheck = new HealthCheck();
-		animals.forEach(animal -> animal.accept(healthCheck)); // Perform health check on each animal
+		lion.accept(healthCheck);	// perform health check on animal
 	}
 }
+
+// VIMM COSST

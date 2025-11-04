@@ -3,14 +3,14 @@ package net.projectsync.designpatterns.c.behavioral;
 import org.springframework.stereotype.Component;
 
 abstract class Game {
+	protected abstract void startPlay(); 		// Subclass provides implementation
+	protected abstract void endPlay(); 			// Subclass provides implementation
+
 	// Template method – final so subclasses cannot override
 	public final void play() {
-		startPlay(); 						// Step 1 – subclass-specific
-		endPlay(); 							// Step 2 – subclass-specific
+		startPlay(); 							// Step 1 – subclass-specific
+		endPlay(); 								// Step 2 – subclass-specific
 	}
-
-	public abstract void startPlay(); 		// Subclass provides implementation
-	public abstract void endPlay(); 		// Subclass provides implementation
 }
 
 class Cricket extends Game {

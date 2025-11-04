@@ -3,7 +3,6 @@ package net.projectsync.designpatterns.c.behavioral;
 import java.util.ArrayList;
 import java.util.List;
 
-// --- Subject ---
 class NewsAgency {
 	private String news;
 	private final List<Observer> observers = new ArrayList<>();
@@ -44,7 +43,6 @@ class NewsChannel implements Observer {
 	}
 }
 
-// --- Test ---
 public class ObserverPattern {
 	public static void main(String[] args) {
 		NewsAgency agency = new NewsAgency();

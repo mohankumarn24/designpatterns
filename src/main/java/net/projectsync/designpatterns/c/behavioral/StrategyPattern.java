@@ -1,7 +1,7 @@
 package net.projectsync.designpatterns.c.behavioral;
 
 interface PaymentStrategy {
-	void pay(int amount);
+	void makePayment(int amount);
 }
 
 class CreditCardPayment implements PaymentStrategy {
@@ -12,7 +12,7 @@ class CreditCardPayment implements PaymentStrategy {
 	}
 
 	@Override
-	public void pay(int amount) {
+	public void makePayment(int amount) {
 		System.out.println("Paid " + amount + " using Credit Card: " + cardNumber);
 	}
 }
@@ -25,7 +25,7 @@ class ChequePayment implements PaymentStrategy {
 	}
 
 	@Override
-	public void pay(int amount) {
+	public void makePayment(int amount) {
 		System.out.println("Paid " + amount + " using Cheque: " + chequeNumber);
 	}
 }
@@ -41,7 +41,7 @@ class ShoppingCart {
 		if (paymentStrategy == null) {
 			throw new IllegalStateException("PaymentStrategy not set!");
 		}
-		paymentStrategy.pay(amount);
+		paymentStrategy.makePayment(amount);
 	}
 }
 
