@@ -1,5 +1,6 @@
 package net.projectsync.designpatterns.b.structural;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,7 +36,13 @@ class Document {
 	public Document(Printer printer) {
 		this.printer = printer;
 	}
-
+	
+	/*
+	public Document(@Qualifier("laserPrinter") Printer printer) {		// comment out '@Primary' to use this
+		this.printer = printer;
+	}
+	*/
+	
 	public void print(String content) {
 		printer.print(content);
 	}

@@ -42,6 +42,21 @@ class NotificationFacade {
 	}
 }
 
+/*
+@Service
+class NotificationFacade {
+	private final List<NotificationService> notificationServiceList;
+
+	public NotificationFacade(List<NotificationService> notificationServiceList) {
+		this.notificationServiceList = notificationServiceList;
+	}
+
+	public void notifyUser() {
+		notificationServiceList.forEach(notificationService -> notificationService.sendNotification());
+	}
+}
+*/
+
 @SpringBootApplication
 public class FacadePattern implements CommandLineRunner {
 	private final NotificationFacade notificationFacade;
