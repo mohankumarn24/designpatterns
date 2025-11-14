@@ -21,9 +21,7 @@ class Book implements Prototype {
 }
 
 public class PrototypePattern {
-
 	public static void main(String[] args) {
-
 		Book original = new Book("Original Book");
 		Book copy = (Book) original.clone();
 		copy.setData("Copied Object");

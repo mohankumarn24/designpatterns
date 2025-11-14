@@ -1,5 +1,11 @@
 package net.projectsync.designpatterns.b.structural;
 
+class LegacyPaymentSystem {
+	public void makePayment(double amount) {
+		System.out.println("Payment processed: " + amount);
+	}
+}
+
 interface PaymentProcessor {
 	void makePayment(double amount);
 }
@@ -15,12 +21,6 @@ class PaymentAdapter implements PaymentProcessor {
 	public void makePayment(double amount) {
 		// translate the new interface call to old system
 		legacyPaymentSystem.makePayment(amount);
-	}
-}
-
-class LegacyPaymentSystem {
-	public void makePayment(double amount) {
-		System.out.println("Payment processed: " + amount);
 	}
 }
 

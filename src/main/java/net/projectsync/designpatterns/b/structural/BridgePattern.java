@@ -50,7 +50,6 @@ class Document {
 
 @SpringBootApplication
 public class BridgePattern implements CommandLineRunner {
-
 	private final Document document;
 	
 	public BridgePattern(Document document) {
