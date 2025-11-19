@@ -1,5 +1,7 @@
 package net.projectsync.designpatterns.c.behavioral;
 
+// Alters behavior when an object’s state changes
+
 // Step 1: State Interface
 interface OrderState {
 	void processOrder(Order order);

@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+// Separates abstraction from implementation
+
 interface Printer {
 	void print(String content);
 }

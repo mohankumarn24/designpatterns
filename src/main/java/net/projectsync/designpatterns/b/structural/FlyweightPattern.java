@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+// Reuses objects to save memory
+
 public class FlyweightPattern {
 	@Configuration
 	static class FlyweightConfig {

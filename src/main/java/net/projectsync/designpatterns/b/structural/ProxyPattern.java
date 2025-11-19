@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+// Controls access to another object
+
 // Printer Interface
 interface PrinterB {
 	void print();

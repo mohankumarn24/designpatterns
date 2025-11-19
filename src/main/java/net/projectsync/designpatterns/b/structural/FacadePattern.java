@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 
+// Simplifies a complex system with a single interface
+
 // NotificationService Interface
 interface NotificationService {
 	void sendNotification();

@@ -2,6 +2,8 @@ package net.projectsync.designpatterns.c.behavioral;
 
 import org.springframework.stereotype.Component;
 
+// Defines skeleton of an algorithm, leaving steps to subclasses
+
 abstract class Game {
 	protected abstract void startPlay(); 		// Subclass provides implementation
 	protected abstract void endPlay(); 			// Subclass provides implementation

@@ -1,5 +1,7 @@
 package net.projectsync.designpatterns.c.behavioral;
 
+// Adds new operations to objects without modifying their classes, by separating algorithm from data structure
+
 // Visitor = Actions
 interface Visitor {
 	void visit(Lion lion);

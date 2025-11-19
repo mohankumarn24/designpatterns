@@ -1,5 +1,7 @@
 package net.projectsync.designpatterns.b.structural;
 
+// Passes a request through a chain of handlers until one handles it
+
 // Handler
 abstract class Handler {
 	protected Handler next;

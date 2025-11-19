@@ -1,5 +1,7 @@
 package net.projectsync.designpatterns.c.behavioral;
 
+// Encapsulates algorithms so they can vary independently
+
 interface PaymentStrategy {
 	void makePayment(int amount);
 }

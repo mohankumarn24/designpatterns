@@ -3,6 +3,8 @@ package net.projectsync.designpatterns.c.behavioral;
 import java.util.ArrayList;
 import java.util.List;
 
+// Centralizes complex communications between objects
+
 // Mediator Interface
 interface ChatMediator {
 	void addUser(User user);

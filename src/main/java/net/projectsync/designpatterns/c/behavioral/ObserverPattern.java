@@ -3,6 +3,8 @@ package net.projectsync.designpatterns.c.behavioral;
 import java.util.ArrayList;
 import java.util.List;
 
+// Notifies dependent objects when an object changes
+
 class NewsAgency {
 	private String news;
 	private final List<Observer> observers = new ArrayList<>();

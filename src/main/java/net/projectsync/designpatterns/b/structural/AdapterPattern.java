@@ -1,5 +1,7 @@
 package net.projectsync.designpatterns.b.structural;
 
+// Makes one interface compatible with another
+
 class LegacyPaymentSystem {
 	public void makePayment(double amount) {
 		System.out.println("Payment processed: " + amount);

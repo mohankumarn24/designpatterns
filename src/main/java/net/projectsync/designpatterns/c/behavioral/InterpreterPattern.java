@@ -1,5 +1,7 @@
 package net.projectsync.designpatterns.c.behavioral;
 
+// Defines a grammar for a language and interprets sentences using that grammar
+
 class Person {
 	private int age;
 

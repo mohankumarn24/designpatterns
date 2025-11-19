@@ -1,5 +1,7 @@
 package net.projectsync.designpatterns.b.structural;
 
+// Adds new behavior dynamically
+
 interface Coffee {
 	String getDescription();
 	double getPrice();

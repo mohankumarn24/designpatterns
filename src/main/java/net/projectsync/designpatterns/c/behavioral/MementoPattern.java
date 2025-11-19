@@ -2,6 +2,8 @@ package net.projectsync.designpatterns.c.behavioral;
 
 import java.util.Stack;
 
+// Captures an object’s internal state so it can be restored later (undo feature)
+
 class FormMemento {
 	private final String name;
 	private final String email;
