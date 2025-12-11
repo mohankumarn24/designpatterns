@@ -1,5 +1,11 @@
 package net.projectsync.designpatterns.a.creational;
 
+/**
+ * Defines an interface for creating objects but lets subclasses decide the object type
+ *  - '@Bean' methods inside '@Configuration' classes act as factory methods
+ *  - Spring IoC container internally calls factory methods to create beans
+ */
+
 interface Shape {
 	void draw();
 }

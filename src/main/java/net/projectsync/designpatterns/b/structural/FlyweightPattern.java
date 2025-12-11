@@ -6,7 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-// Reuses objects to save memory
+/**
+ * Reuses/shares objects to save memory
+ *  - Spring bean pooling, connection pooling (HikariCP)
+ *  - Reuses pooled objects instead of creating new ones to save resources
+ */
 
 public class FlyweightPattern {
 	@Configuration

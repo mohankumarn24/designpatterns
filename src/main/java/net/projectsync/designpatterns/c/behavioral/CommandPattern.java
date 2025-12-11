@@ -5,7 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-// Encapsulates a request as an object
+/**
+ * Encapsulates a request as an object
+ * - 'Runnable', 'Callable' tasks in '@Async', Messaging commands
+ * - Command object represents executable actions decoupled from caller
+ */
 
 interface Command {
 	void execute();

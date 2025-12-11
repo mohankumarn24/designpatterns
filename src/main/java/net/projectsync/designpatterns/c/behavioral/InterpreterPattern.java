@@ -1,6 +1,10 @@
 package net.projectsync.designpatterns.c.behavioral;
 
-// Defines a grammar for a language and interprets sentences using that grammar
+/**
+ * Defines a grammar for a language and interprets sentences using that grammar
+ *  - Spring Expression Language (SpEL)
+ *  - SpEL parses expressions and interprets them using an AST interpreter
+ */
 
 class Person {
 	private int age;

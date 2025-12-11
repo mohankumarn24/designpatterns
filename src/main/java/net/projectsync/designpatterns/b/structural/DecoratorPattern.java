@@ -1,6 +1,10 @@
 package net.projectsync.designpatterns.b.structural;
 
-// Adds new behavior dynamically
+/**
+ * Adds new behavior/responsibilities dynamically
+ *  - BeanPostProcessor, AOP proxies decorate original beans
+ *  - Wraps beans with additional behavior (logging, caching, transactions)
+ */
 
 interface Coffee {
 	String getDescription();

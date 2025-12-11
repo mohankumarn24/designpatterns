@@ -2,6 +2,12 @@ package net.projectsync.designpatterns.a.creational;
 
 import lombok.Data;
 
+/**
+ * Creates objects by cloning an existing object
+ *  - Beans with @Scope("prototype")
+ *  - Creates **new instance per getBean() call** using constructor, not cloning
+ */
+
 interface Prototype {
 	Prototype clone();
 }

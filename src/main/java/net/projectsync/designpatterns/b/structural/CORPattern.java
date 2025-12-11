@@ -1,6 +1,10 @@
 package net.projectsync.designpatterns.b.structural;
 
-// Passes a request through a chain of handlers until one handles it
+/**
+ * Passes a request through a chain of handlers until one handles it
+ *  - Spring Security filter chain, Servlet Filter chain
+ *  - Each handler decides to process or forward request to next handler
+ */
 
 // Handler
 abstract class Handler {

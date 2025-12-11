@@ -6,7 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-// Controls access to another object
+/**
+ * Controls access to another object
+ *  - Spring AOP proxies, transactional proxies ('@Transactional')
+ *  - Adds cross-cutting logic around method calls using proxies
+ */
 
 // Printer Interface
 interface PrinterB {
@@ -32,9 +36,8 @@ class LaserPrinterB implements PrinterB {
 }
 
 // Proxy Printer
-// ✅ Fix: Don’t make ProxyPrinter a bean of type Printer
-// Instead, inject the real Printer into it manually
-// ProxyPrinter → needs Printer → could inject ProxyPrinter → depends on itself ❌ (The Circular Dependency Problem).
+// Don’t make ProxyPrinter a bean of type Printer. Instead, inject the real Printer into it manually
+// ProxyPrinter → needs Printer → could inject ProxyPrinter → depends on itself -> (The Circular Dependency Problem).
 @Service
 class ProxyPrinter {
 	private final PrinterB realPrinter;

@@ -3,7 +3,11 @@ package net.projectsync.designpatterns.b.structural;
 import java.util.ArrayList;
 import java.util.List;
 
-// Treats a group of objects and a single object in the same way (tree-like structure)
+/**
+ * Treats a group of objects and a single object in the same way (tree-like structure)
+ *  - Spring Security Filter Chain. Internally it is also a composite 
+ *  - FilterChainProxy holds a list of filters and treats them as one
+ */
 
 interface Employee {
 	void showEmployeeDetails();

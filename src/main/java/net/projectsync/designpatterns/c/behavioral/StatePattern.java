@@ -1,6 +1,10 @@
 package net.projectsync.designpatterns.c.behavioral;
 
-// Alters behavior when an object’s state changes
+/**
+ * Changes behavior when state changes
+ *  - Java Thread States, Spring Bean Lifecycle States(Starting, Running, Stopping, Stopped)
+ *  - Object behavior changes depending on lifecycle or thread state
+ */
 
 // Step 1: State Interface
 interface OrderState {

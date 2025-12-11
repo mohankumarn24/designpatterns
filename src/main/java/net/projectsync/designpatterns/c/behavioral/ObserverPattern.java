@@ -3,7 +3,11 @@ package net.projectsync.designpatterns.c.behavioral;
 import java.util.ArrayList;
 import java.util.List;
 
-// Notifies dependent objects when an object changes
+/**
+ * Notifies dependents when state changes
+ *  - Spring Events ('ApplicationEventPublisher', '@EventListener') 
+ *  - Publishes events to multiple listeners automatically 
+ */
 
 class NewsAgency {
 	private String news;
@@ -54,6 +58,6 @@ public class ObserverPattern {
 		agency.addObserver(channel1);
 		agency.addObserver(channel2);
 
-		agency.setNews("Observer Pattern Simplified!");
+		agency.setNews("New movie coming up!");
 	}
 }
