@@ -6,7 +6,11 @@ import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-// Filters objects using different criteria, and allows combining these criteria flexibly
+/**
+ * Filters objects using different criteria, and allows combining these criteria flexibly
+ *  - Spring JPA Criteria API ('CriteriaBuilder', 'CriteriaQuery') 
+ *  - Supports dynamic / programmatic query building using flexible criteria
+ */
 
 // Person class
 @Data

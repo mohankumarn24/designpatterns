@@ -1,6 +1,10 @@
 package net.projectsync.designpatterns.a.creational;
 
-// Builds complex objects step-by-step
+/**
+ * Builds complex objects step-by-step
+ *  - 'UriComponentsBuilder', 'MockMvcBuilders', 'ResponseEntity.ok().body()', Lombok
+ *  - Avoids telescoping constructors; supports readable chained object creation
+ */
 
 class Computer {
 

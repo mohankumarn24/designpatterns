@@ -1,6 +1,23 @@
 package net.projectsync.designpatterns.b.structural;
 
-// Makes one interface compatible with another
+/*
+Structural Design Patterns:
+ - Purpose: Deal with object composition. They focus on how classes and objects are composed to form larger structures
+ - Key Idea: “How to combine objects and classes to form larger structures”
+   
+|------------|--------------------------|--------------------------------------|-------------------------------------|   
+| Category   | Focus                    | Question Answered                    | Spring Example                      |
+|------------|--------------------------|--------------------------------------|-------------------------------------|
+| Structural | How objects are composed | “How do I connect objects?”          | JDBC Template, Spring Proxies       |
+|------------|--------------------------|--------------------------------------|-------------------------------------|
+*/
+
+/**
+ * Makes one interface compatible with another, or
+ * Converts one interface into another expected by client
+ *  - AuthenticationProvider (Database, LDAP, In-Memory)
+ *  - Converts credentials into Spring Security’s internal auth model 
+ */
 
 class LegacyPaymentSystem {
 	public void makePayment(double amount) {

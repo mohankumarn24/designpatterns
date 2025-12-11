@@ -1,6 +1,11 @@
 package net.projectsync.designpatterns.c.behavioral;
 
-// Encapsulates algorithms so they can vary independently
+/**
+ * Encapsulates interchangeable algorithms, or
+ * Encapsulates algorithms so they can vary independently
+ * - 'PasswordEncoder' strategies, 'ViewResolver', 'DataSource' routing
+ * - Algorithm chosen at runtime depending on configuration
+ */
 
 interface PaymentStrategy {
 	void makePayment(int amount);

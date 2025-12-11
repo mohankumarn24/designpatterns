@@ -7,7 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-// Separates abstraction from implementation
+/**
+ * Separates abstraction from implementation
+ *  - @Cacheable("users"). Actual cache implementation can be Redis, Ehcache 
+ *  - Single abstraction (`CacheManager`) works with many concrete cache providers
+ */
 
 interface Printer {
 	void print(String content);

@@ -6,7 +6,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 
-// Simplifies a complex system with a single interface
+/**
+ * Simplifies a complex system with a single interface
+ * - JdbcTemplate, RestTemplate, WebClient simplify low-level operations
+ * - Hides low-level boilerplate (JDBC/HTTP) behind easy high-level methods 
+ */
 
 // NotificationService Interface
 interface NotificationService {

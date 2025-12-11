@@ -2,7 +2,11 @@ package net.projectsync.designpatterns.c.behavioral;
 
 import java.util.Stack;
 
-// Captures an object’s internal state so it can be restored later (undo feature)
+/**
+ * Saves and restores object state
+ * - @Rollback, Spring’s 'Environment'& 'PropertySources' load/restore configs
+ * - Transaction rollback & config restore behave like saving/restoring snapshots
+ */
 
 class FormMemento {
 	private final String name;

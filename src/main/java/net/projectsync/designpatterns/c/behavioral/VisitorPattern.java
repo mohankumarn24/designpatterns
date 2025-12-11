@@ -1,6 +1,22 @@
 package net.projectsync.designpatterns.c.behavioral;
 
-// Adds new operations to objects without modifying their classes, by separating algorithm from data structure
+/*
+Behavioral Design Patterns:
+ - Purpose: Deal with communication between objects. They focus on how objects interact and share responsibility.
+ - Key Idea: “How objects behave and interact with each other”
+
+|------------|--------------------------|--------------------------------------|-------------------------------------|   
+| Category   | Focus                    | Question Answered                    | Spring Example                      |
+|------------|--------------------------|--------------------------------------|-------------------------------------|
+| Behavioral | How objects communicate  | “How do objects talk to each other?” | Event handling, TransactionTemplate |
+|------------|--------------------------|--------------------------------------|-------------------------------------|
+*/
+
+/**
+ * Adds new operations to objects without modifying their classes, by separating algorithm from data structure
+ *  - Spring bean traversal using 'BeanDefinitionVisitor'.@Value("${app.name}")
+ *  - Visitor walks bean definitions and applies placeholder resolution  
+ */
 
 // Visitor = Actions
 interface Visitor {

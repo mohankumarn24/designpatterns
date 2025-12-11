@@ -3,7 +3,11 @@ package net.projectsync.designpatterns.c.behavioral;
 import java.util.ArrayList;
 import java.util.List;
 
-// Centralizes complex communications between objects
+/**
+ * Centralizes communication between objects
+ *  - 'DispatcherServlet' mediates between controllers, views, handlers
+ *  - DispatcherServlet coordinates entire web request flow
+ */
 
 // Mediator Interface
 interface ChatMediator {

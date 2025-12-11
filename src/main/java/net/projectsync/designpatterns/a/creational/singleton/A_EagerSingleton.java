@@ -1,5 +1,23 @@
 package net.projectsync.designpatterns.a.creational.singleton;
 
+/*
+Creational Design Patterns:
+ - Purpose: Deal with object creation mechanisms. They abstract the instantiation process to make a system independent of how objects are created, composed, and represented
+ - Key Idea: “How to create objects efficiently and flexibly”
+
+|------------|--------------------------|--------------------------------------|-------------------------------------|   
+| Category   | Focus                    | Question Answered                    | Spring Example                      |
+|------------|--------------------------|--------------------------------------|-------------------------------------|
+| Creational | How objects are created  | “How do I make this object?”         | Bean creation (`@Bean`, Singleton)  |
+|------------|--------------------------|--------------------------------------|-------------------------------------|
+*/
+
+/**
+ * Ensures a class has only one instance
+ *  - Spring beans are singleton by default (@Scope("singleton"))
+ *  - IoC container creates & maintains exactly one shared bean instance
+ */
+
 // Instance created at class loading time
 public class A_EagerSingleton {
 

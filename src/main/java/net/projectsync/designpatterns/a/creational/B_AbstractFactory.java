@@ -1,5 +1,11 @@
 package net.projectsync.designpatterns.a.creational;
 
+/**
+ * Creates families of related objects without specifying concrete classes
+ *  - 'BeanFactory', 'ApplicationContext' instantiate families of beans
+ *  - Provides multiple related beans without exposing concrete implementations
+ */
+
 interface ShapeAF {
 	void draw();
 }

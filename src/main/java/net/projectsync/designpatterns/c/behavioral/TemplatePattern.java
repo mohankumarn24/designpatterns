@@ -2,14 +2,17 @@ package net.projectsync.designpatterns.c.behavioral;
 
 import org.springframework.stereotype.Component;
 
-// Defines skeleton of an algorithm, leaving steps to subclasses
+/**
+ * Defines skeleton of an algorithm, leaving steps to subclasses
+ *  - JdbcTemplate:Get conn,create stmt,execute SQL,iterate ResultSet,handle ex,close resource
+ *  - Spring templates fix algorithm steps and let user override specific parts 
+ */
 
 abstract class Game {
 	protected abstract void startPlay(); 		// Subclass provides implementation
 	protected abstract void endPlay(); 			// Subclass provides implementation
 
-	// Template method – final so subclasses cannot override
-	public final void play() {
+	public final void play() {					// Template method – final so subclasses cannot override
 		startPlay(); 							// Step 1 – subclass-specific
 		endPlay(); 								// Step 2 – subclass-specific
 	}
