@@ -8,7 +8,7 @@ public class F_BillPughSingleton {
     private F_BillPughSingleton() { }
 
     // Static inner class - loaded only when getInstance() is called
-    // JVM guarantees thread-safety during class loading
+    // JVM guarantees thread-safety during class loading (ie., class is loaded only once)
     private static class SingletonHolder {
 
         // Singleton instance created lazily when this inner class is loaded

@@ -38,11 +38,11 @@ class Manager implements Employee {
 		this.position = position;
 	}
 
-	public void add(Employee e) {
+	public void addEmployee(Employee e) {
 		subordinates.add(e);
 	}
 
-	public void remove(Employee e) {
+	public void removeEmployee(Employee e) {
 		subordinates.remove(e);
 	}
 
@@ -62,8 +62,8 @@ public class CompositePattern {
 		Developer dev2 = new Developer("Jane", "Backend Developer");
 
 		Manager manager = new Manager("Alice", "Project Manager");
-		manager.add(dev1);
-		manager.add(dev2);
+		manager.addEmployee(dev1);
+		manager.removeEmployee(dev2);
 
 		manager.showEmployeeDetails();
 	}
