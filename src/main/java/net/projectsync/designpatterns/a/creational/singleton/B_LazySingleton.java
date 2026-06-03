@@ -22,6 +22,37 @@ public class B_LazySingleton {
     }
 }
 
+
+/*
+public class MyClass {
+    public static void main(String[] args) {
+
+        // Blank final local variable.
+        // A final variable must be assigned exactly once before it is read.
+        final String str1;
+
+        // CTE #1: Reading before initialization
+        //         Java requires a blank final local variable to be definitely assigned before any read.
+        if (str1 == null) {
+            str1 = "hello, world";
+        }
+
+        // CTE #2: Reassigning a final variable
+        //         A final variable cannot be assigned again after initialization.
+        final String str2 = "hello";
+        str2 = "world";
+    }
+}
+
+Expected Compile Time Errors:
+variable str1 might not have been initialized
+cannot assign a value to final variable str2
+*/
+
+
+
+
+
 /*
 Thread A enters getInstance()
  - Sees instance == null
