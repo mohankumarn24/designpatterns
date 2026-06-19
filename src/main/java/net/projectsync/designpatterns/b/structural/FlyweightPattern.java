@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Scope;
 
 /**
  * Reuses/shares objects to save memory
- *  - Spring bean pooling, connection pooling (HikariCP)
+ *  - Java String pool, Spring bean pooling, connection pooling (HikariCP)
  *  - Reuses pooled objects instead of creating new ones to save resources
  */
 
